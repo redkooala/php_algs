@@ -1,0 +1,15 @@
+{
+    "name": "orangesan/php-algs",
+    "description": "dev",
+    "authors": [
+        {
+            "name": "Sanal Ochirov",
+            "email": "ochirov_ss@ekb.sima-land.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "8.5.x-dev"
+    }
+}
