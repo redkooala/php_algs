@@ -1,45 +1,69 @@
 <?php
 
-include '../vendor/autoload.php';
-require '../sort.php';
+namespace Tests;
+
+use Algo\Sort;
+use PHPUnit\Framework\TestCase;
 
 
-
-class SortTest extends \PHPUnit\Framework\TestCase
+class SortTest extends TestCase
 {
-    public function testQSort(): void
+
+    public function sortProvider(): array
     {
-        $data = [1, -1, 3, 5, 0, -10, 22];
-        $this->assertEquals(
-            [-10, -1, 0, 1, 3, 5, 22],
-            fastSort($data)
-        );
+        return [
+            [
+                [7, 12, -4, 155, 0, 12, 3, -6],
+                [-6, -4, 0, 3, 7, 12, 12, 155]
+            ]
+        ];
     }
 
-    public function testInsertSort(): void
+    /**
+     * @test
+     * @dataProvider sortProvider
+     */
+    public function fastSort($data, $expected)
     {
-        $data = [1, -1, 3, 5, 0, -10, 22];
-        $this->assertEquals(
-            [-10, -1, 0, 1, 3, 5, 22],
-            insertSort($data)
-        );
+        $sortClass = new \Algo\Sort();
+
+        $result = $sortClass->fastSort($data);
+        self::assertEquals($expected, $result);
     }
 
-    public function testMergeSort(): void
+   /**
+     * @test
+     * @dataProvider sortProvider
+     */
+    public function mergeSort($data, $expected): void
     {
-        $data = [1, -1, 3, 5, 0, -10, 22];
-        $this->assertEquals(
-            [-10, -1, 0, 1, 3, 5, 22],
-            mergeSort($data)
-        );
+        $sortClass = new \Algo\Sort();
+
+        $result = $sortClass->mergeSort($data);
+        self::assertEquals($expected, $result);
     }
 
-    public function testBubbleSort(): void
+    /**
+     * @test
+     * @dataProvider sortProvider
+     */
+    public function bubleSort($data, $expected): void
     {
-        $data = [1, -1, 3, 5, 0, -10, 22];
-        $this->assertEquals(
-            [-10, -1, 0, 1, 3, 5, 22],
-            bubbleSort($data)
-        );
+        $sortClass = new \Algo\Sort();
+
+        $result = $sortClass->bubbleSort($data);
+        self::assertEquals($expected, $result);
+    }
+
+      /**
+     * @test
+     * @dataProvider sortProvider
+     */
+    public function insertSort($data, $expected): void
+    {
+        $sortClass = new \Algo\Sort();
+
+        $result = $sortClass->insertSort($data);
+        self::assertEquals($expected, $result);
     }
 }

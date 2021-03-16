@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":264:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:4:{s:41:"Tests\SortTest::fastSort with data set #0";d:0.004;s:42:"Tests\SortTest::mergeSort with data set #0";d:0;s:42:"Tests\SortTest::bubleSort with data set #0";d:0;s:43:"Tests\SortTest::insertSort with data set #0";d:0;}}}
