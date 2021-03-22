@@ -5,7 +5,6 @@ namespace Tests;
 use Algo\Sort;
 use PHPUnit\Framework\TestCase;
 
-
 class SortTest extends TestCase
 {
 
